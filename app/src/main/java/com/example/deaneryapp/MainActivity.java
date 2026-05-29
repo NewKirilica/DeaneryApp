@@ -1,5 +1,6 @@
 package com.example.deaneryapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnStudents = findViewById(R.id.btnStudents);
         Button btnExams = findViewById(R.id.btnExams);
         Button btnBadGrades = findViewById(R.id.btnBadGrades);
+        Button btnReminder = findViewById(R.id.btnReminder);
 
         listResults = findViewById(R.id.listResults);
 
@@ -76,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
             showList(dbHelper.getBadGrades(faculty, startDate, endDate));
         });
+
+        btnReminder.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ReminderActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupSpinner(Spinner spinner, ArrayList<String> values) {
@@ -84,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item,
                 values
         );
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }

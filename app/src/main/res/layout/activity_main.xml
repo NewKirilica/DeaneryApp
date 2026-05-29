@@ -87,6 +87,13 @@
             android:layout_height="wrap_content"
             android:text="Показать двойки за период" />
 
+        <Button
+            android:id="@+id/btnReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Напоминания о покупках"
+            android:layout_marginTop="10dp"/>
+
         <TextView
             android:id="@+id/textResultTitle"
             android:layout_width="match_parent"
@@ -104,4 +111,5 @@
             android:dividerHeight="6dp" />
 
     </LinearLayout>
+
 </ScrollView>
